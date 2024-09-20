@@ -421,17 +421,18 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #0f4074;
 }
 
 /* Secondary Button */
 .btn-secondary {
-    background-color: #001e38;
+    background-color: #070f18;
     color: #ffffff;
 }
 
 .btn-secondary:hover {
     background-color: #565e64;
+    color: #f8f9fa;
 }
 
 /* Unordered List */
