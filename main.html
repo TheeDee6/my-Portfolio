@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theodora's Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .logo-img {
+            max-height: 50px;
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .nav-container {
+            margin-top: -15px;
+        }
+
+        .navbar-nav{
+            margin-right: 300px;
+            font-size: 19px;
+        }
+
+        #header-section {
+            height: 70px;
+         }
+
+         @media (min-width: 992px) {
+         #header-section {
+        padding: 45px;
+         }
+         }
+
+        .nav-link {
+            color: #000 !important;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        @media (max-width: 992px){
+            .collapse {
+            background-color: #ffffffaf;
+        }
+        }
+
+        .btn-browse {
+            background-color: #FFAB40;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-browse:hover {
+            background-color: #a17c5d;
+        }
+        .hero-image {
+            border-radius: 0 0 30% 0;
+        }
+
+        .hero-special {
+            background-color: rgba(218, 165, 32, 0.5); /* Golden color with transparency */
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+        }
+        .hero-special {
+           position: relative;
+           left: -120px; /* Overflow to the left */
+           }
+        .hero-btn {
+            padding: 0.7rem 2rem;
+            border-radius: 50px;
+        }
+
+        @media (max-width: 992px) {
+           .hero-special {
+                 left: 0rem; /* Align to default on smaller screens */
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-image {
+                border-radius: 2px 40px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-btn {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        .source-code {
+      background-color: #f8f9fa;
+      padding: 2rem 0;
+    }
+    .source-code h5 {
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #6c757d;
+    }
+    .code-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+    .code-logo img {
+      max-height: 50px;
+    }
+    .project-container {
+      background-color: #ffac40e3;
+      font-family: Arial, sans-serif;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      display: flex
+    }
+    .card-one {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #fff;
+        text-align: center;
+    }
+    .card-one:hover{
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .card img {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .cta-card {
+      background-color: #fff;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    .cta-card h1 {
+      color: #2d0b0b;
+    }
+    .cta-card p {
+      color: #555;
+    }
+    .btn-primary {
+      background-color: #FFAB40;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #da9235;
+    }
+    .contact-section {
+            position: relative;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 4rem 1rem;
+            border-radius: 15px 15px 0 0;
+            overflow: hidden;
+        }
+
+        .contact-section h2,
+        .contact-section p {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Decorative Background Video */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        /* Contact Info Card */
+        .contact-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        .contact-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .info-section {
+            background: linear-gradient(135deg, #f57c00, #fbc02d);
+            color: white;
+            border-radius: 10px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-top: 0rem;
+        }
+
+        /* Form styling */
+        .form-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, #f57c00, #fbc02d);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 0.7rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #fbc02d, #f57c00);
+            color: white;
+        }
+    .footer {
+      background-color: #545454;
+      color: #fff;
+      padding: 3rem 1rem;
+    }
+    .footer h5 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .footer a {
+      color: #f59e42; /* Orange for links */
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .footer .social-icons a {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+      color: #f59e42;
+    }
+    .footer .social-icons a:hover {
+      color: #ffa751;
+    }
+    .footer .bottom-bar {
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      border-top: 1px solid #f59e42dc;
+      padding-top: 1rem;
+      text-align: center;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background-color: #f59e42;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .back-to-top:hover {
+      background-color: #ffa751;
+    }
+    </style>
+</head>
+
+<body>
+    <header id="header-section" class="header w-100 bg-white py-3 shadow-sm">
+        <div class="nav-container">
+            <nav class="navbar navbar-expand-lg navbar-light text-center">
+                <!-- Logo Section -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assets/images/logo.png" alt="logo" class="logo-img">
+                    <span class="brand-name">Portfolio</span>
+                </a>
+
+                <!-- Toggle Button for Navbar -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#header-section">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#works-section">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-section">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#project-section">Pages</a>
+                        </li>
+                    </ul>
+
+                    <!-- Buttons Section -->
+                    <a href="home.html" class="btn btn-browse mt-3 rounded-pill text-center mb-3">Appointment
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero-section" class="container-fluid pb-5">
+        <div class="row align-items-center">
+            <!-- Left Column: Hero Image -->
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0" style="border-radius: 2px 40px;">
+                <img src="assets/images/my-pic1.png" alt="hero-image" class="img-fluid hero-image">
+            </div>
+    
+            <!-- Right Column: Hero Content -->
+            <div class="col-lg-6 col-md-12 text-center text-lg-start position-relative">
+                <!-- Special Highlight Box -->
+                <div class="hero-special rounded shadow-lg mb-4">
+                    <span>Theodora</span>
+                    <span>Darko</span>
+                </div>
+    
+                <!-- Hero Text -->
+                <p class="hero-text mb-4">
+                    I specialize in backend website development,<br>
+                    with expertise in creating robust, scalable, and secure server-side applications.
+                </p>
+    
+                <!-- Button -->
+                <a href="#projects-section" class="btn btn-primary hero-btn">View My Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="col-12 mt-6 mb-4" style="padding-left: 3rem; padding-right: 3rem;">
+        <div class="card card-body bg-light p-sm-5">
+            <!-- Text -->
+            <h5 class="display-4 opacity-3 text-dark lh-0 mb-2" style="border-bottom: 2px solid #000; display: inline-block; width: 250px;">About
+                me</h5>
+            <p class="fs-5 heading-color">I am a passionate web developer with a strong proficiency in MongoDB, Express.js, Node.js, HTML, CSS, and Bootstrap.
+            Currently, I am expanding my skill set by learning React to stay ahead in the ever-evolving tech landscape.</p>
+            <a href="learn-more.html" style="text-decoration: none; color: #FFAB40;">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+            </svg></a>
+
+            <!-- Avatar -->
+            <div class="d-flex align-items-center mt-4">
+                <!-- Avatar -->
+                <div class="avatar" style="width: 50px; height: 50px;">
+                    <img class="avatar-img rounded-circle" src="assets/images/my-pic-5.jpg" alt="avatar"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <!-- Info -->
+                <div class="ms-3">
+                    <h6 class="mb-0">Theodora Darko</h6>
+                    <small>Professional, Web-Dev</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="source-code">
+        <div class="container">
+            <h5>Source codes</h5>
+            <div class="row g-3 justify-content-center">
+                <div class="col-6 col-md-2">
+                    <div class="code-logo">
+                        <img src="assets/images/html2.png" alt="Vertigo Logo">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="code-logo">
+                        <img src="assets/images/php_vs_javascript.png" alt="Rise Logo">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="code-logo">
+                        <img src="assets/images/node.js.png" alt="Glossy Logo">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="code-logo">
+                        <img src="assets/images/tscript.png" alt="Minty Logo">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="code-logo">
+                        <img src="assets/images/c++.png" alt="Waveless Logo">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="code-logo">
+                        <img src="assets/images/react.js.jpg" alt="Glossy Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="project-container py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-12 col-md-4">
+                    <a href="https://example.com/workspace1" target="_blank" class="text-decoration-none">
+                        <div class="card h-100">
+                            <img src="assets/images/responsive3.png" class="card-img-top" alt="Workspace">
+                            <div class="card-body">
+                                <h5 class="card-title text-dark">Collaborative Workspace</h5>
+                                <p class="card-text text-muted">Discover modern and vibrant workspaces.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="col-12 col-md-4">
+                    <a href="https://example.com/workspace2" target="_blank" class="text-decoration-none">
+                        <div class="card h-100" style="transform: scale(1.05);">
+                            <img src="assets/images/responsive2.png" class="card-img-top" alt="Meeting Office">
+                            <div class="card-body">
+                                <h5 class="card-title text-dark">Meeting Office</h5>
+                                <p class="card-text text-muted">Host meetings with the best facilities.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Card 3 -->
+                <div class="col-12 col-md-4">
+                    <a href="https://example.com/invoice" target="_blank" class="text-decoration-none">
+                        <div class="card h-100">
+                            <img src="assets/images/responsive1.png" class="card-img-top" alt="Invoice">
+                            <div class="card-body">
+                                <h5 class="card-title text-dark">Invoice Details</h5>
+                                <p class="card-text text-muted">View and manage your invoices seamlessly.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <!-- Contact Header Section -->
+        <div class="contact-section">
+            <!-- Background Video -->
+            <video class="background-video" autoplay loop muted playsinline>
+                <source src="assets/images/contact_video.mp4" type="video/mp4">
+            </video>
+    
+            <h2 class="display-5 fw-bold">Get In Touch</h2>
+            <p class="lead">I'd like to talk more about what you need</p>
+        </div>
+    
+        <!-- Contact Info Section -->
+        <div class="row text-center mt-4">
+            <!-- Address -->
+            <div class="col-md-3">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <h6 class="contact-title">Address</h6>
+                    <p class="contact-info">12124 First Street, nr 54</p>
+                </div>
+            </div>
+    
+            <!-- Email -->
+            <div class="col-md-3">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope-fill"></i>
+                    </div>
+                    <h6 class="contact-title">Email</h6>
+                    <p class="contact-info">hello@creative.com</p>
+                </div>
+            </div>
+    
+            <!-- Phone -->
+            <div class="col-md-3">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <h6 class="contact-title">Phone</h6>
+                    <p class="contact-info">+233 (424) 535 3523</p>
+                </div>
+            </div>
+    
+            <!-- Contact -->
+            <div class="col-md-3">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <h6 class="contact-title">Contact</h6>
+                    <p class="contact-info">Addy Slim</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container my-2 vh-100 d-flex justify-content-center align-items-center" style="position: relative; bottom: -80px;">
+        <div class="row g-2" style="width: 80%; max-width: 900px;">
+            <!-- Form Section -->
+            <div class="col-12">
+                <div class="form-section">
+                    <h5 class="mb-4">Full name</h5>
+                    <div class="mb-4">
+                        <input type="text" class="form-control" placeholder="Full Name">
+                    </div>
+    
+                    <h5 class="mb-4">Email</h5>
+                    <div class="mb-4">
+                        <input type="text" class="form-control" placeholder="johndoe@gmail.com">
+                    </div>
+    
+                    <h5 class="mb-4">Your message</h5>
+                    <div class="mb-4">
+                        <textarea class="form-control" rows="4" placeholder="I want to say that..."></textarea>
+                    </div>
+    
+                    <button type="submit" class="btn btn-custom">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5></h5>
+                    <p></p>
+                </div>
+                <!-- Logo and Navigation -->
+                <div class="col-md-4 mb-4 mb-md-0 text-center">
+                    <h1>TheeDee</h1>
+                    <nav>
+                        <a href="#home" class="me-3">Home</a>
+                        <a href="#about" class="me-3">About</a>
+                        <a href="#service" class="me-3">Service</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+                    <div class="social-icons mt-3">
+                        <a href="#facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#youtube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                &copy; Copyright 2025 Proficient by <a href="#jegtheme">Theodora</a>. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top">BACK TO TOP</button>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
